@@ -23,8 +23,8 @@
 </head>
 <body>
 <div id="div" class="demo">
-    <input type="text" name="" id="txt"/><input id="add" type="button" value="add"/>
-    <input id="del" type="button" value="del"/>
+    <!-- <input type="text" name="" id="txt"/><input id="add" type="button" value="add"/>
+    <input id="del" type="button" value="del"/> -->
     <table class="table">
         <tr>
             <th>表头内容</th>
@@ -85,15 +85,16 @@
                     this.className = tmp;
                 }
                 tr[i].onclick = function(e){
-                    k = this.index;
-                    if(!+this.getAttribute('data-on')){
-                        this.setAttribute('data-on', 1);
+                     k = this.index;
+                     // if(!+this.getAttribute('data-on')){
+                        if(!(this.className == 'on')){
+                        //this.setAttribute('data-on', 1);
                         this.className = 'on';
-                    } else {
+                     } else {
                         if(this.index % 2 == 0){ this.className = 'even'; }
                         this.className = this.className.replace(/on/g, '');
-                        this.setAttribute('data-on', 0);
-                    }
+                        //this.setAttribute('data-on', 0);
+                     }
                 }
             }
 

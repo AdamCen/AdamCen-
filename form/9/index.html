@@ -67,7 +67,7 @@
                 if(stop){
                     clearInterval(obj.timer);
                     obj.timer = null;
-                    fn && fn.call(obj);
+                    fn();
                 }
             }, 20);
         }

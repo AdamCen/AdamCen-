@@ -65,6 +65,7 @@
         }
         init();
         function checkNull(){
+            //按提交后，检测各输入是否为空，若是，触发错误提示方法，添加错误类
             for(var i = 0; i < input.length; i++){
                 if(input[i].value.length < 1){
                     error(input[i], '不能为空');
@@ -73,6 +74,9 @@
             }
         }
         function error(o, txt, show){
+            //若为提交出现错误提示后聚焦，将提示隐藏
+            //没有错误提示，则显示提示
+            //若有错误类，则显示
             if(arguments.length == 3 && show){
                 o.tip && (o.tip.style.display = 'none');
             } else {
@@ -85,6 +89,7 @@
             }
         }
         function over(o, txt){
+            //创建右侧提示框
             var pop = div('popover right');
             var arr = div('arrow');
             var content = div('popover-content');

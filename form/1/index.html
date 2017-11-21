@@ -18,7 +18,8 @@
         var btn = document.getElementById('btn');
         btn.onclick = function(){
           input.value = input.value.trim();
-          }
+          //input.value = input.value.replace(/^\s+|\s+$/gm,'');//兼容方法
+          };
     }());
 </script>
 </body>

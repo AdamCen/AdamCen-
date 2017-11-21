@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web前端库及框架博物馆</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+        body {
+            padding-top: 50px;
+            padding-bottom: 40px;
+            color: #5a5a5a;
+        }
+
+        /* 轮播广告 */
+
+        .carousel {
+            height: 500px;
+            margin-bottom: 60px;
+        }
+
+        .carousel .item {
+            height: 500px;
+            background-color: #000;
+        }
+
+        .carousel  img {
+            width: 100%;
+        }
+
+        .carousel-caption {
+            z-index: 10;
+        }
+
+        .carousel-caption p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        /* 简介 */
+
+        .summary {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .summary .col-md-4 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* 特性 */
+
+        .feature-divider {
+            margin: 40px 0;
+        }
+
+        .feature {
+            padding: 30px 0;
+        }
+
+        .feature-heading {
+            font-size: 50px;
+            color: #2a6496;
+        }
+
+        .feature-heading .text-muted {
+            font-size: 28px;
+        }
+
+        /* 响应式布局 */
+
+        @media (max-width: 768px) {
+
+            .summary {
+                padding-right: 3px;
+                padding-left: 3px;
+            }
+
+            .carousel {
+                height: 300px;
+                margin-bottom: 30px;
+            }
+
+            .carousel .item {
+                height: 300px;
+            }
+
+            .carousel img {
+                min-height: 300px;
+            }
+
+            .carousel-caption p {
+                font-size: 16px;
+                line-height: 1.4;
+            }
+
+            .feature-heading {
+                font-size: 34px;
+            }
+
+            .feature-heading .text-muted {
+                font-size: 22px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .feature-heading {
+                margin-top: 120px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- 顶部导航 -->
+<div class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">前端库与框架展览馆</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#ad-carousel">综述</a></li>
+                <li><a href="#summary-container">简述</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">特点 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#feature-tab" data-tab="tab-chrome">Angular</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-firefox">React</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-safari">Vue</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-opera">Bootstrap</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-ie">Jquery</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- 广告轮播 -->
+<div id="ad-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+        <li data-target="#ad-carousel" data-slide-to="2"></li>
+        <li data-target="#ad-carousel" data-slide-to="3"></li>
+        <li data-target="#ad-carousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/chrome-big.jpg" alt="1 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Angular</h1>
+
+                    <p>Angular.js，是第一个框架（或MVC应用程序框架），由Google（谷歌）公司开发。</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://www.google.cn/intl/zh-CN/chrome/browser/"
+                          role="button" target="_blank">点我下载</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/firefox-big.jpg" alt="2 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>React</h1>
+
+                    <p>React，是一个用于构建用户界面的 JavaScript 库，由Facebook 与 贡献者开发</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://www.firefox.com.cn/download/" target="_blank"
+                          role="button">点我下载</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/safari-big.jpg" alt="3 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Vue</h1>
+
+                    <p>vue是一个用于构建用户界面的轻量级渐进式框架，由Evan You团队开发</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://www.apple.com/cn/safari/" target="_blank"
+                          role="button">点我下载</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/opera-big.jpg" alt="4 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Bootstrap</h1>
+
+                    <p>Bootstrap是Twitter推出的一个用于前端开发的开源工具包</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://www.opera.com/zh-cn" target="_blank"
+                          role="button">点我下载</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/ie-big.jpg" alt="5 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Jquery</h1>
+
+                    <p>Query是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://ie.microsoft.com/" target="_blank"
+                          role="button">点我下载</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+<!-- 主要内容 -->
+<div class="container summary">
+
+    <!-- 简介 -->
+    <div class="row" id="summary-container">
+        <div class="col-md-4">
+            <img class="img-circle" src="images/chrome-logo-small.jpg" alt="chrome">
+
+            <h2>Angular.js</h2>
+
+            <p>Angular.js，是第一个框架（或MVC应用程序框架），由Google（谷歌）公司开发。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="images/firefox-logo-small.jpg" alt="firefox">
+
+            <h2>React</h2>
+
+            <p>React，是一个用于构建用户界面的 JavaScript 库，由Facebook 与 贡献者开发</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="images/safari-logo-small.jpg" alt="safari">
+
+            <h2>Vue</h2>
+
+            <p>Vue是一个用于构建用户界面的轻量级渐进式框架，由Evan You团队开发</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+        </div>
+    </div>
+
+    <!-- 特性 -->
+
+    <hr class="feature-divider">
+
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li class="active"><a href="#tab-chrome" role="tab" data-toggle="tab">Angular</a></li>
+        <li><a href="#tab-firefox" role="tab" data-toggle="tab">React</a></li>
+        <li><a href="#tab-safari" role="tab" data-toggle="tab">Vue</a></li>
+        <li><a href="#tab-opera" role="tab" data-toggle="tab">Bootstrap</a></li>
+        <li><a href="#tab-ie" role="tab" data-toggle="tab">Jquery</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-chrome">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Angular <span
+                            class="text-muted">众多大公司采用的框架</span></h2>
+
+                    <p class="lead">Google CAngularJS[1]  诞生于2009年，由Misko Hevery 等人创建，后为Google所收购。是一款优秀的前端JS框架，已经被用于Google的多款产品当中。AngularJS有着诸多特性，最为核心的是：MVC、模块化、自动化双向数据绑定、语义化标签、依赖注入等等。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/chrome-logo.jpg"
+                         alt="Chrome">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-firefox">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/firefox-logo.jpg"
+                         alt="Firefox">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">React<span class="text-muted">小巧，高效，快捷灵活</span>
+                    </h2>
+
+                    <p class="lead">React 是一个用于构建用户界面的 JAVASCRIPT 库。
+                        React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。
+                        React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。
+                        React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-safari">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Vue <span class="text-muted">新兴的火热</span></h2>
+
+                    <p class="lead">Vue.js 是一个用于构建用户界面的轻量级渐进式框架。core(核心) 提供了一个类似于 React 的虚拟 DOM 视图层，它可以与其他库集成，但它也能支持单页应用程序。该框架由以前在 AngularJS 工作过的 Evan You 创建，所以该框架提取了 AngularJS 中作者喜欢的部分。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/safari-logo.jpg"
+                         alt="Safari">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-opera">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/opera-logo.jpg"
+                         alt="Opera">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Bootstrap <span class="text-muted">简洁，大方，使用广</span>
+                    </h2>
+
+                    <p class="lead">Bootstrap，来自 Twitter，是目前最受欢迎的前端框架之一。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。
+                    Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-ie">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">Jquery <span class="text-muted">历史悠久，经验广泛</span></h2>
+
+                    <p class="lead">jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/ie-logo.jpg"
+                         alt="IE">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于 -->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="modal-label">关于</h4>
+                </div>
+                <div class="modal-body">
+                    <p>岑润新，前端学习前行者</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p class="pull-right"><a href="#top">回到顶部</a></p>
+
+        <p>&copy; 2016 AdamCen </p>
+    </footer>
+
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        //$('#ad-carousel').carousel();
+        $('.navbar-collapse a').click(function (e) {
+            var href = $(this).attr('href');
+            var tabId = $(this).attr('data-tab');
+            if ('#' !== href) {
+                e.preventDefault();
+                $(document).scrollTop($(href).offset().top - 70);
+                if (tabId) {
+                    $('#feature-tab a[href=#' + tabId + ']').tab('show');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

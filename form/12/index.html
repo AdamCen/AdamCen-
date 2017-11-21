@@ -31,7 +31,10 @@
         var check = document.getElementsByTagName('input');
         var len = check.length - 1;
         all.onclick = function(){
-            choose(this.checked);
+            // choose(this.checked);
+            each(check, function(i){
+                check[i].checked = all.checked;
+            });
         }
         function each(arr, callback){
             var len = arr.length;
@@ -43,9 +46,9 @@
             return arr;
         }
         function choose(t){
-            each(check, function(i){
-                check[i].checked = t;
-            });
+            // each(check, function(i){
+            //     check[i].checked = t;
+            // });
         }
         each(check, function(i){
             check[i].onclick = function(){
