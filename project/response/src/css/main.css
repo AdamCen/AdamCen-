@@ -332,44 +332,7 @@ header .main ul li a.active {
 
 /* 滚动广告 */
 
-.ad {
-    height: 350px;
-    margin-top: 5px;
-    overflow: hidden;
-    width: 100%;
-}
 
-
-.ad img{
-    background: no-repeat;
-}
-
-@media only screen and (max-width: 50em) {
-    .ad {
-         width: 50rem;
-    }
-   .ad img{
-    height: 310px;
-    width: 50rem;
-}
-}
-
-@media only screen and (min-width: 30.0625em) and (max-width: 50em) {
-    .ad img{
-    height: 310px;
-    width: 800px;
-}
-}
-
-@media only screen and (max-width: 30em) {
-    .ad {
-         width: 30rem;
-    }
-   .ad img{
-    height: 310px;
-    width: 30rem;
-}
-}
 
 
 /* 平台特点 */

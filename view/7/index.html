@@ -133,7 +133,7 @@
                     t = 0;
                 dog.on(window, 'scroll', function(){
                     scrollTop = doc.documentElement.scrollTop || doc.body.scrollTop;
-                    t = scrollTop + (doc.documentElement.clientHeight - that.a.offsetHeight) / 2;
+                    t = scrollTop+ (doc.documentElement.clientHeight - that.a.offsetHeight) / 2 ;
                     dog.act(that.a, 'top', t);
                     dog.act(that.b, 'top', t);
                 });

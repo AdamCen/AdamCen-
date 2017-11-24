@@ -72,14 +72,14 @@
             if(i > 0){
                 tr[i].index = i;
                 tr[i].onmouseover = function(){
-                    if(this.index == k || this.className.search(/on/) != -1){
+                    if(this.className.search(/on/) != -1){
                         return;
                     }
                     tmp = this.className;
                     this.className = 'hover';
                 }
                 tr[i].onmouseout = function(){
-                    if(this.index == k || this.className.search(/on/) != -1){
+                    if(this.className.search(/on/) != -1){
                         return;
                     }
                     this.className = tmp;
